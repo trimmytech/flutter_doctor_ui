@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_docker/doctor_app_theme.dart';
+import 'package:flutter_docker/helper.dart';
 import 'package:flutter_docker/ui/ui.dart';
 
 void main() {
@@ -12,11 +14,10 @@ class MyDoctorApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primaryColor: Colors.white,
-      ),
+      theme: DoctorAppTheme.lightTheme,
       title: "Home",
-      home: HomePage(),
+      initialRoute: "/",
+      routes: routes,
     );
   }
 }
