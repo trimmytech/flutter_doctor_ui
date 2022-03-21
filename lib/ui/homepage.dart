@@ -151,28 +151,27 @@ class _HomePageState extends State<HomePage> {
                   onTap: () {
                     //
                   },
-                  child: Padding(
+                  child: Container(
                     padding: const EdgeInsets.only(top: 8.0, bottom: 8),
-                    child: Container(
-                      constraints: BoxConstraints(
-                          maxHeight: 80
-                      ),
-                      child: Row(
-                        children: [
-                          Container(
-                            width: 88,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(8),
-                                color: Color(0xffEAEAEA),
-                                image: DecorationImage(
-                                    fit: BoxFit.cover,
-                                    image: AssetImage("assets/images/${topDoctors[index].doctorPicture}")
-                                )
-                            ),
+                    constraints: BoxConstraints(
+                        maxHeight: 80
+                    ),
+                    child: Row(
+                      children: [
+                        Container(
+                          width: 88,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(8),
+                              color: Color(0xffEAEAEA),
+                              image: DecorationImage(
+                                  fit: BoxFit.cover,
+                                  image: AssetImage("assets/images/${topDoctors[index].doctorPicture}")
+                              )
                           ),
-                          
-                          
-                          Flexible(
+                        ),
+                        Flexible(
+                          child: Hero(
+                            tag: topDoctors[index].doctorName,
                             child: Padding(
                               padding: const EdgeInsets.only(left: 16),
                               child: Column(
@@ -187,6 +186,7 @@ class _HomePageState extends State<HomePage> {
 
 
                                   const Spacer(),
+
                                   SizedBox(
                                     width: MediaQuery.of(context).size.width - 136,
                                     child: Row(
@@ -244,15 +244,16 @@ class _HomePageState extends State<HomePage> {
                                       ],
                                     ),
                                   )
-                                  
+
                                 ],
                               ),
                             ),
-                          )
-                        ],
-                      ),
+                          ),
+                        )
+                      ],
                     ),
                   ),
+
                 );
               })
             ],
